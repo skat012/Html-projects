@@ -1,0 +1,108 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ }
+ :root{
+   --index: calc(1vw + 1vh);
+   --transition: 1.5s cubic-bezier(.05, .5, 0, 1);
+ }
+ @font-face {
+    font-family: kamerik-3d;
+    src: url(../fonts/kamerik205-heavy.woff2);
+    font-weight: 900;
+ }
+ @font-face {
+    font-family: marriweather-italic-3d;
+    src: url(../fonts/merriweather-regular-italic.woff2);
+ }
+ body{
+    background-color: black;
+    color: white;
+    font-family: camerik-3d;
+ }
+ .logo{
+	width: 200px;
+	height: auto;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: calc (51% - 100px);
+	top: 100px;
+	z-index: 1;
+ }
+ .layers {
+    perspective:  850px;
+    overflow: hidden;
+ }
+ .layers__container{
+    height: 100vh;
+    min-height: 10vh;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition);
+ }
+ .layers__item{
+    position: absolute;
+    inset: -7vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ .layer-1{
+   transform: translateZ(-21px) scale(1.1);
+ }
+ .layer-2{
+   transform: translateZ(100px) rotateX(10deg) rotate(25deg);
+ }
+ .layer-3{
+   transform: translateZ(250px);
+ }
+ .layer-4{
+   transform: translateZ(250px);
+ }
+ .layer-5{
+   transform: translateZ(-10px) scale(1.05);
+ }
+ .layer-6{
+   transform: translateZ(150px) scale(0.8);
+ }
+ .hero-content{
+   font-size: calc(var(--index) * 1.9);
+   text-align: center;
+   text-transform: uppercase;
+   color: rgb(9, 172, 221);
+   text-shadow: 2px 2px 2px #000;
+   letter-spacing: calc(var(--index) * .5);
+   margin-top: calc(var(--index) * 1);
+ }
+ .hero-content span{
+   display: block;
+ }
+ .hero-content__p{
+   text-transform: none;
+   font-family: marriweather-italic-3d;
+   letter-spacing: normal;
+   font-size: calc(var(--index) * 1.2);
+   line-height: 3;
+ }
+ .button-start{
+   font-family: Arial;
+   color:rgb(30, 186, 233);
+   text-shadow: 2px 2px 2px #000;
+   font-weight: 600;
+   text-transform: uppercase;
+   font-size: calc(var(--index) * 1);
+   letter-spacing: .1vw;
+   padding: calc(var(--index) * .3) calc(var(--index) * .8);
+   background-color: transparent;
+   border-radius: 10em;
+   border: rgb(30 186 233 / .5) 3px solid;
+   cursor: pointer;
+   margin-top: calc(var(--index) * 2.5);
+ }
+ .layer-4, .layer-5, .layer-6 {
+   pointer-events: none;
+ }
