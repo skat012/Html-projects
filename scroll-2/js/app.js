@@ -7,16 +7,15 @@ if(ScrollTrigger.isTouch !==1){
         smooth: 1.5,
         effects: true
     })
-
-    gsap.fromTo('.hero-section', { opacity: 1 }, {
-        opacity: 0,
-        scrollTrigger: {
-            trigger: '.hero-section', 
-            start: 'center',
-            end: 'bottom',
-            scrub: true
-        }
-    })
+    // gsap.fromTo('.hero-section', { opacity: 1 }, {
+    //     opacity: 0,
+    //     scrollTrigger: {
+    //         trigger: '.hero-section', 
+    //         start: 'center',
+    //         end: 'bottom',
+    //         scrub: true
+    //     }
+    // })
     
     // let itemsL = gsap.utils.toArray('.gallery-left .gallery__item')
 
